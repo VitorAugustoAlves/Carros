@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Speed Racer</title>
+    <!-- Lib -->
+    <script src="./lib/p5.min.js"></script>
+    <script src="./lib/p5.dom.min.js"></script>
+    <script src="./lib/p5.sound.min.js"></script>
+    <script src="./lib/p5.play.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="./js/Game.js"></script>
+    <script src="./js/Form.js"></script>
+    <script src="./js/Player.js"></script>
+
+    <!-- Firebase SDK CODE ADD BELOW -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.0/firebase-database.js"></script>
+
+    <script>
+      // Configuração do Firebase do seu aplicativo da web
+      //adicione aqui
+      const firebaseConfig = {
+        apiKey: "AIzaSyDrxCDpr_hY8aQmYpJVr67W5tu9J8nvp6A",
+        authDomain: "carro-129aa.firebaseapp.com",
+        databaseURL: "https://carro-129aa-default-rtdb.firebaseio.com",
+        projectId: "carro-129aa",
+        storageBucket: "carro-129aa.appspot.com",
+        messagingSenderId: "627030522555",
+        appId: "1:627030522555:web:572a7b7f5164bc648e479e",
+      };
+      // Inicializar Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+  </head>
+  <body>
+    <script src="./sketch.js"></script>
+  </body>
+</html>
