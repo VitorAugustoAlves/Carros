@@ -6,6 +6,8 @@ class Player {
     this.positionY = 0;
     this.rank = 0;
     this.score = 0;
+    this.fuel = 185;
+    this.life = 185;
   }
   getCount() {
     var playercountr = database.ref("playerCount");
@@ -49,15 +51,26 @@ class Player {
       positionX: this.positionX,
       positionY: this.positionY,
       rank: this.rank,
-      score: this.score
+      score: this.score,
+      life:this.life
     });
   }
   getDistance() {
     var playerDistancer = database.ref("players/player" + this.index);
-    playerDistancer.on("value", (data) => {
+    playerDistancer.on("value", data => {
       var data = data.val();
       this.positionX = data.positionX;
       this.positionY = data.positionY;
     });
+  }
+  getCar(){
+    database.ref("carAtEnd").on("value", data => {
+      this.rank = data.val();
+    })
+  }
+  static updateCars(rank){
+    database.ref("/").update({
+      carAtEnd: rank
+    })
   }
 }

@@ -50,7 +50,7 @@ class Form {
       // criamos matriz com o numero dos jogadores
       player.addPlayer(); //objeto jogador chama o método para add jogadores
       player.updateCount(playerCount);
-      player.getDistance
+      player.getDistance();
     });
   }
 }
