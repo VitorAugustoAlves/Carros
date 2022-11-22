@@ -76,7 +76,7 @@ class Game {
         var playlife = allPlayers[ply].life;
         if  (playlife<=0){
           carros[index-1].changeImage("explo")
-          carros[index-1].scale = 0.6
+          carros[index-1].scale = 0.3
         }
         carros[index - 1].position.x = x;
         carros[index - 1].position.y = y;
@@ -106,7 +106,7 @@ class Game {
         this.showRank()
 
       }
-      if (!this.playerMoving){
+      if (this.playerMoving){
         player.positionY +=5;
         player.update();
       }
@@ -135,7 +135,9 @@ class Game {
     this.leader2.position(width / 3 - 50, 130);
   }
   playerControl() {
+    if  (!this.fogo){
     if (keyIsDown(UP_ARROW)) {
+      this.playerMoving = true;
       player.positionY += 10;
       player.update();
     }
@@ -149,6 +151,7 @@ class Game {
       player.positionX += 5;
       player.update();
     }
+  }
   }
   showLeaderboard() {
     var leader1, leader2;
